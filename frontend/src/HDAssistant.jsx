@@ -1,4 +1,4 @@
-jejimport React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import { FaUser, FaArrowLeft, FaHeadset, FaCommentDots, FaPaperPlane } from 'react-icons/fa';
 import aiHelpDeskService from './aiHelpDeskService';
@@ -16,7 +16,13 @@ const faqs = {
   "printer": "Make sure your printer is powered on and connected to the same network.",
   "antivirus": "Please visit our software portal to install the company-approved antivirus."
 };
-
+const sections = [
+  { title: "Dashboard", icon: <Home className="w-5 h-5" /> },
+  { title: "My Tickets", icon: <Ticket className="w-5 h-5" /> },
+  { title: "AI Troubleshooter", icon: <Bot className="w-5 h-5" /> },
+  { title: "Knowledge Base", icon: <BookOpen className="w-5 h-5" /> },
+  { title: "Settings", icon: <Settings className="w-5 h-5" /> },
+];
 const HDAssistant = () => {
   const [sidebarCollapsed, setSidebarCollaspsed] = useState(false);
   const [input, setInput] = useState('');
